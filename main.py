@@ -27,16 +27,17 @@ class MyWindow(QMainWindow):
 	# event listener for the button
 	def clicked(self):
 		self.label.setText("button pressed")
+		self.update()
+		
+	# update label width as the text changes
+	def update(self):
+		self.label.adjustSize()
 		
 		
 
 def window():
 	app = QApplication(sys.argv) # starter of the GUI
 	win = MyWindow() # making a window
-	
-	
-	
-	
 	
 	win.show() # to show window
 	sys.exit(app.exec_()) # this is waiting for QApplication to exit, when it does, this closes the application
